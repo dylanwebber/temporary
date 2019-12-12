@@ -1,0 +1,80 @@
+
+
+body {
+  background-color: #10A52E;
+  margin: 0;
+  font-family:sans-serif;
+}
+h1{
+  font-family: "san-serif";
+  font-size: 75px;
+  text-align: center;
+  font-weight: bold;
+  
+}
+.column-1{
+    float: left;
+    width: 35%;
+    clear: left;
+}
+.column-2{
+    float: left;
+    width: 55%;
+    font-family: "futura";
+    font-size: 25px;
+}
+.topnav {
+    overflow: hidden;
+    background-color:  #b2babb;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.content {
+    background-color:#d2b4de;
+    padding: 10px;
+}
+
+.footer {
+   padding: 10px;
+    clear: both;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+/*style for phone*/
+@media only screen and (max-width: 600px) {
+    h1{
+    font-size: 40px;
+  }
+  h2{
+    font-size: 30px;
+  }
+  body{
+    font-size: 15px;
+  }
+  .column-1{
+    width: 100%;
+  }
+  .column-2{
+    width: 100%;
+    clear: both;
+  }
+  .footer{
+    font-size: 10px;
+  }
+}/*close style for phones*/
+
+</style>

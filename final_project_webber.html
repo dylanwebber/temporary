@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+ 
+    <title>Financial Check-Up</title>
+<link href="final.css"rel="stylesheet" type="text/css"/>
+</head>
+<body>
+   <script type="text/javascript">              
+   
+        </script>
+ <h1>How Financially Stable are you?</h1>
+ <div class= "row">
+    <div class= "column-1">
+     <p> <img src="money.jpeg"></p>
+</div>
+    <div class="column-2">
+   <p> Things can always turn South real quick. If an economic downturn hit tomorrow, where would you be standing? The answer is not well. No one would be. But you can at least be better prepared than nothing! It's not an easy task, but it's necessary if you want to be safe and stable come the unfortunate time you lose your job or the economy takes a turn for the worst. Read here and figure out where you stand and how you could improve!</p>
+</div>
+ </div>
+<div class= "row">
+    <div class= "column-1">
+<p> <img src="savings.jpeg"/> </p>
+</div>
+    <div class="column-2">
+     <p>The first thing you should do each and every time you receive your paycheck is put a portion of it into your savings. That should be habitual. In all honesty, you shouldn't even have to think about it. Through most banks, you can set this up automatically. If something happens to you, you'll always want a savings fund to lean on. </p>
+    </div>
+</div>
+    <div class= "row">
+    <div class= "column-1">
+<p>  <img src="Rothira.jpeg"></p>
+</div>
+    <div class="column-2">
+     <p>The future is key when it comes to trying to make yourself financially stable. If your employer offers a 401K, put as much in as your employer is willing to match. If you can't afford to max it, at least put a portion of your paycheck in there. If your employer doesn't offer a 401K, open up a Roth IRA. Most banks and brokerages offer some variation of one, so open one up today to start slowly building future funds! </p>
+    </div>
+    </div>
+    <div class= "row">
+    <div class= "column-1">
+<p> <img src="Debtplan.jpeg"/> </p>
+</div>
+    <div class="column-2">
+     <p> Create a plan to get rid of debt. Debt follows you wherever you go and will never leave you alone. In a lot of cases, it can get worse. Credit card debt, student loans, whatever it is, you need to be building a plan to get rid of it. It's unreasonable to think you can cancel all your debt in one paycheck, so you have to build a plan to help offset it. Like you do with your savings deposits, you should put a monthly portion of your paycheck into paying off your debt. Depending on the kind, you'll want to either expedite the process or stretch it out over a longer time period.</p>
+    </div>
+    </div>
+    <div class= "row">
+    <div class= "column-1">
+<p> <img src="bill.jpeg"/> </p>
+</div> 
+    <div class="column-2">
+     <p> Lastly, you should make it a big emphasis to pay your bills and rent off immediately each month. This is a basic part of your expenditure that must be paid each month. If you wait to pay it off, several things could happen. One, your mind is tricked into thinking you have more money available to you than you actually do. When you pay off your bills immediately, it becomes as if you never even had that money. Secondly, you can miss your bill payments and get dinged on your credit score. If you start taking hits to your credit score, the rest of your financial future becomes way more difficult.</p>
+    </div>
+    </div>
+    <div class= "row">
+    <div class= "column-1">
+<p> <canvas id="words" width="400" height="400" style="border:1px solid #000000;">
+
+</canvas>
+<script>
+      function writewords() {
+ var c = document.getElementById("words");
+var ctx = c.getContext("2d");
+ctx.font = "25px times new roman";
+ctx.textAlign= "center";
+ctx.fillText("Secure your future. Invest today.", 200, 200);
+      }
+    </script>
+<input type="button" value="Click for words of advice" onclick="writewords();"/></p>
+</div>
+    <div class="column-2">
+     <p>Now let's checkout where you're standing financially</p>
+    </div>
+    </div>
+    <div class=="row">
+    <div class= "column-1">
+     
+</div>
+     <div>
+     <div class="column-2">
+     <p> Calculate your leftover money after necessary expenditures
+        <p>Enter your income: <input type="text" id="income"/>
+            <select type="multiple" id="incomeunits">
+                <option value="Annual" selected="selected">Annual</option>
+                <option value="Monthly">Monthly</option>
+            </select>
+             </p>
+        <p>Enter your total bill costs: <input type="text" id="bills"/>
+            <select type="multiple" id="billunits">
+                <option value="Annual" selected="selected">Annual</option>
+                <option value="Monthly">Monthly</option>
+            </select>
+        </p>
+         <div>
+            <button onclick="computemoney()">Calculate</button>
+        <div>
+         <script type="text/javascript">
+                   function computemoney() {
+                var income = Number(document.getElementById("income").value);
+                var incomeunits = document.getElementById("incomeunits").value;
+                var bills = Number(document.getElementById("bills").value);
+                var billunits = document.getElementById("billunits").value;
+
+
+                if (incomeunits == "Annual") income /= 12;
+                if (billunits == "Annual") bills /= 12;
+
+                var money = income - bills;
+                var canvas = document.getElementById('moneycanvas');
+                if (canvas.getContext) {   
+                    var ctx = canvas.getContext('2d');
+                    ctx.font="20px Georgia";
+                    ctx.fillText("Your leftover money for each month is: " + Math.round(money)/100, 100, 50);
+                    ctx.fillText("This means: ", 100, 100);
+                    if (money < 200) ctx.fillText("I'd hold on to that money for future use", 285, 100);
+                    if (money >= 200 && money <= 500) ctx.fillText("You got a little money to spend", 285, 100);
+                    if (money >= 500 && money <= 1000) ctx.fillText("You can afford to treat yourself", 285, 100);
+                    if (money > 800) ctx.fillText("You got vacation money", 285, 100);
+                }          
+            }
+        </script>
+        <canvas id = "moneycanvas" width = "1000" height = "200"></canvas>
+    </div>
+    </div>
+  </div>
+    <div>
+    <div>
+     <div class="row">
+      <div class="column-1">
+     <h2>How financially stable are you?</h2>
+    <div id="quiz"></div>
+<div id="results"></div>
+    <p>Do you put a portion of your paycheck into your savings each month?</p>
+    <form>
+    <input type="radio" onclick="disabled1()" id="correct1" name="question1"> Yes<br>
+    <input type="radio" onclick="disabled1()" id="incorrect1" name="question1"> No<br>
+    </form><br>
+    <p>Do you have a 401K or Roth IRA?</p>
+    <form>
+    <input type="radio" onclick="disabled2()"  id="correct2" name="question2"> Yes<br>
+    <input type="radio" onclick="disabled2()" id="incorrect2" name="question2"> No<br>
+    </form><br>                    
+    <p>Do you an overwheling amount of debt?</p>
+    <form>
+    <input type="radio" onclick="disabled3()"  id="incorrect3" name="question3"> Yes <br>
+    <input type="radio" onclick="disabled3()"  id="correct3" name="question3"> No<br>
+    </form><br>
+    <p>Do you have a plan for any of your debts/future debts?</p>
+    <form>
+    <input type="radio" onclick="disabled4()" id="correct4" name="question4"> Yes <br>
+    <input type="radio" onclick="disabled4()" id="incorrect4" name="question4"> No <br>
+    </form><br>  
+    <p>Do you pay your bills on time? </p>
+    <form>
+    <input type="radio" onclick="disabled5()" id="correct5" name="question5"> Yes <br>
+    <input type="radio" onclick="disabled5()"  id="incorrect5" name="question5"> No <br>
+    </form><br>
+    <p> Do you invest your money in accounts other than your savings? </p>
+    <form>
+    <input type="radio" onclick="disabled6()" id="correct6" name="question6"> Yes<br>
+    <input type="radio" onclick="disabled6()" id="incorrect6" name="question6"> No<br>
+    </form><br>
+     <p> Do you go on large shopping sprees to relieve stress? </p>
+    <form>
+    <input type="radio" onclick="disabled6()" id="incorrect7" name="question7"> Yes<br>
+    <input type="radio" onclick="disabled6()" id="correct7" name="question7"> No<br>
+    </form><br>
+     <p> Do you have money set aside in case you lose your income? </p>
+    <form>
+    <input type="radio" onclick="disabled6()" id="correct8" name="question8"> Yes<br>
+    <input type="radio" onclick="disabled6()" id="incorrect8" name="question8"> No<br>
+    </form><br>
+    <button id= "btnResults"onclick="confirmation();">Submit Quiz</button>
+    <br><br>
+    <h3 id="answer" style= "display: inline-block;"></h3>
+    <p id="feedback" style="display:inline"></p>
+    
+      </div>
+     </div>
+    </div>
+ <script>
+  var ans1=0;
+  var ans2=0;
+  var ans3=0;
+  var ans4=0;
+  var ans5=0;
+  var ans6=0;
+  var ans7=0;
+  var ans8=0;
+function disabled1()
+{
+ document.getElementById("correct1").disabled=true;
+ document.getElementById("incorrect1").disabled=true;
+}
+function disabled2()
+{
+ document.getElementById("correct2").disabled=true;
+ document.getElementById("incorrect2").disabled=true;
+}
+function disabled3()
+{
+ document.getElementById("correct3").disabled=true;
+ document.getElementById("incorrect3").disabled=true;
+}
+function disabled4()
+{
+ document.getElementById("correct4").disabled=true;
+ document.getElementById("incorrect4").disabled=true;
+}
+function disabled5()
+{
+ document.getElementById("correct5").disabled=true;
+ document.getElementById("incorrect5").disabled=true;
+}
+function disabled6()
+{
+ document.getElementById("correct6").disabled=true;
+ document.getElementById("incorrect6").disabled=true;
+ 
+}
+function disabled7(){
+document.getElementById("correct7").disabled=true;
+document.getElementById("incorrect7").disabled=true;
+}
+function disabled8(){
+ document.getElementById("correct8").disabled=true;
+ document.getElementById("incorrect8").disabled=true;
+}
+function confirmation()
+{
+ var checked1 = document.getElementById("correct1");
+var checked2= document.getElementById("correct2");
+var checked3= document.getElementById("correct3");
+var checked4= document.getElementById("correct4");
+var checked5= document.getElementById("correct5");
+var checked6= document.getElementById("correct6");
+var checked7= document.getElementById("correct7");
+var checked8= document.getElementById("correct8");
+ var inputs=document.querySelectorAll('input[type="radio"]');
+ for (var i=0; i< inputs.length; i++){
+  inputs [i]. disabled=false;
+}
+
+
+if (checked1.checked){
+ ans1=1;
+}else{
+ ans1=0;
+}
+if (checked2.checked){
+ ans2=1;
+}else{
+ ans2=0;
+}
+if (checked3.checked){
+ ans3=1;
+}else{
+ ans3=0;
+}
+if (checked4.checked){
+ ans4=1;
+}else{
+ ans4=0;
+}
+if (checked5.checked){
+ ans5=1;
+}else{
+ ans5=0;
+}
+if (checked6.checked){
+ ans6=1;
+}else{
+ ans6=0;
+}
+if (checked7.checked){
+ ans7=1;
+}else{
+ ans7=0;
+}
+if (checked8.checked){
+ ans8=1;
+}else{
+ ans8=0;
+}
+var results= ans1+ans2+ans3+ans4+ans5+ans6+ans7+ans8;
+if(results== 0){
+ document.getElementById("answer").innerHTML=results+ "/"+ 8 +"-";
+ document.getElementById("feedback").innerHTML="You need to get some financial consulting now.";
+}else if(results==1){
+ document.getElementById("answer").innerHTML=results+ "/"+8+"-";
+ document.getElementById("feedback").innerHTML="You need to get some financial consulting now.";
+}else if(results==2){
+ document.getElementById("answer").innerHTML=results+ "/"+8+"-";
+ document.getElementById("feedback").innerHTML="You need to get some financial consulting now.";
+}else if(results==3){
+ document.getElementById("answer").innerHTML=results+ "/"+8+"-";
+ document.getElementById("feedback").innerHTML="You're doing alright with your money, but there is easily room for improvment. ";
+}else if(results==4){
+ document.getElementById("answer").innerHTML=results+ "/"+8+"-";
+ document.getElementById("feedback").innerHTML="You're doing alright with your money, but there is easily room for improvment.";
+}else if(results==5){
+ document.getElementById("answer").innerHTML=results+ "/"+8+"-";
+ document.getElementById("feedback").innerHTML="You have a good grasp on your money. You should be alright, but could be even better!";
+}else if(results==6){
+ document.getElementById("answer").innerHTML=results+ "/"+8+"-";
+ document.getElementById("feedback").innerHTML="You have a good grasp on your money. You should be alright, but could be even better!";
+}else if(results==7){
+ document.getElementById("answer").innerHTML=results+ "/"+8+"-";
+ document.getElementById("feedback").innerHTML="You got nothing to worry about. You have a safe and stable future ahead of you.";
+}else if(results==8){
+ document.getElementById("answer").innerHTML=results+ "/"+8+"-";
+ document.getElementById("feedback").innerHTML="You got nothing to worry about. You have a safe and stable future ahead of you.";
+}
+}
+ </script>
+</body>
+</html>
